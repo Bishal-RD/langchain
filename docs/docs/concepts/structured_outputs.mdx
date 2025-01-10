@@ -101,6 +101,8 @@ Here is an example of how to use JSON mode with OpenAI:
 from langchain_openai import ChatOpenAI
 model = ChatOpenAI(model="gpt-4o", model_kwargs={ "response_format": { "type": "json_object" } })
 ai_msg = model.invoke("Return a JSON object with key 'random_ints' and a value of 10 random ints in [0-99]")
+```
+```
 ai_msg.content
 '\n{\n  "random_ints": [23, 47, 89, 15, 34, 76, 58, 3, 62, 91]\n}'
 ```
@@ -138,6 +140,8 @@ model_with_structure = model.with_structured_output(ResponseFormatter)
 structured_output = model_with_structure.invoke("What is the powerhouse of the cell?")
 # Get back the pydantic object
 structured_output
+```
+```
 ResponseFormatter(answer="The powerhouse of the cell is the mitochondrion. Mitochondria are organelles that generate most of the cell's supply of adenosine triphosphate (ATP), which is used as a source of chemical energy.", followup_question='What is the function of ATP in the cell?')
 ```
 
